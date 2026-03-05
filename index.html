@@ -1,88 +1,158 @@
 <!doctype html>
 <html lang="tr">
-  <head>
-    <!-- UTF-8 önerilir (metin/karakter bozulmalarını önler) -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>YMH354 - CSS ile Tasarım Örneği</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Murat Enes Çatı | Portfolio</title>
+  <meta name="description" content="Murat Enes Çatı - Projeler ve detaylar." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
-    <!-- External CSS (en önerilen yöntem) -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<body>
+  <div class="container">
 
-  <body>
-    <a class="skip-link" href="#content">İçeriğe atla</a>
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero-inner">
+        <div class="bigtype">PORTFOLIO</div>
 
-    <header class="site-header">
-      <div class="container header-inner">
-        <h1 class="brand">YMH354</h1>
-        <p class="tagline">Designing with CSS: Layout, Selectors, Box Model</p>
-      </div>
-    </header>
+        <div class="nameblock">
+          <div>
+            <h1>Murat Enes Çatı</h1>
+            <p>Software Engineering · Web / Security / Unity</p>
+          </div>
 
-    <nav class="site-nav" aria-label="Ana menü">
-      <div class="container">
-        <ul class="nav-list">
-          <li><a href="#selectors">Selectors</a></li>
-          <li><a href="#layout">Layout</a></li>
-          <li><a href="#boxmodel">Box Model</a></li>
-          <li><a href="#responsive">Responsive</a></li>
-        </ul>
-      </div>
-    </nav>
+          <div class="badges">
 
-    <main class="container layout" id="content">
-      <article class="card" id="selectors">
-        <h2>1) Selectors + Pseudo-class</h2>
-        <p>
-          Bu paragraf normal akışta. <span class="badge">.class</span> ve
-          <span id="special">#id</span> örneği içeriyor.
-        </p>
+<a class="badge" href="https://github.com/muratenescati" target="_blank">
+<img src="assets/github.svg" alt="GitHub">
+</a>
 
-        <p class="note">
-          Linkin üzerine gel: <a href="#selectors">hover örneği</a>
-        </p>
+<a class="badge" href="https://www.linkedin.com/in/murat-enes-%C3%A7at%C4%B1-3a82211b2/" target="_blank">
+<img src="assets/images.img" alt="LinkedIn">
+</a>
 
-        <button class="btn" type="button">Buton</button>
-      </article>
+<a class="badge" href="https://www.youtube.com/@muratenescati" target="_blank">
+<img src="assets/youtube.svg" alt="YouTube">
+</a>
 
-      <aside class="sidebar card" id="layout">
-        <h2>2) Sidebar</h2>
-        <p>
-          Bu alan tipik web sayfası düzenini (header/nav/content/sidebar/footer)
-          göstermeye yarar.
-        </p>
+<a class="badge" href="mailto:muratcati80@gmail.com">
+<img src="assets/mail.svg" alt="Mail">
+</a>
 
-        <div class="callout">
-          <strong>İpucu:</strong> box-sizing: border-box kullanmak hesaplamaları kolaylaştırır.
-        </div>
-      </aside>
+</div>
 
-      <section class="card" id="boxmodel">
-        <h2>3) Box Model Demo</h2>
-        <div class="box-demo">
-          <div class="box">
-            <p>
-              Bu kutu; <em>content</em>, <em>padding</em>, <em>border</em>, <em>margin</em>
-              bileşenlerini görselleştirir.
-            </p>
+        <div class="portrait-wrap">
+          <div class="portrait">
+            <img src="assets/hero.jpg" alt="Murat Enes Çatı" />
           </div>
         </div>
-      </section>
 
-      <section class="card" id="responsive">
-        <h2>4) Responsive (Media Query)</h2>
-        <p>
-          Ekran daraldığında yerleşim tek sütuna düşecek ve menü daha kompakt görünecek.
-          Tarayıcı genişliğini değiştirip gözlemleyin.
-        </p>
-      </section>
-    </main>
+        <a class="orb" href="#projects" aria-label="Projeleri gör">
+          <div class="core">↓</div>
+          <small>PROJECTS</small>
+        </a>
 
-    <footer class="site-footer">
-      <div class="container">
-        <small>© YMH354 Web Design and Programming</small>
+        <a class="scrollhint" href="#projects">
+          <div class="arrow"><span>↓</span></div>
+          Scroll
+        </a>
       </div>
-    </footer>
-  </body>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="section-title">
+        <h2>Projeler</h2>
+      </div>
+
+      <div class="grid">
+        <a class="card" href="projects/ztna.html">
+          <div class="cover">
+            <img src="assets/p1.jpg" alt="ZTNA Web Site" />
+          </div>
+          <div class="meta">
+            <h3>ZTNA Web Site</h3>
+            <p>Keycloak + Node.js + Nginx ile güvenli erişim & auth akışı.</p>
+            <div class="tags">
+              <span class="tag">Keycloak</span>
+              <span class="tag">OIDC</span>
+              <span class="tag">JWT</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="card" href="projects/cat-avatar.html">
+          <div class="cover">
+            <img src="assets/p2.jpg" alt="Desktop Cat Avatar" />
+          </div>
+          <div class="meta">
+            <h3>Desktop Cat Avatar</h3>
+            <p>Unity + Python ile masaüstü etkileşimli avatar (komut → animasyon).</p>
+            <div class="tags">
+              <span class="tag">Unity</span>
+              <span class="tag">C#</span>
+              <span class="tag">Python</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="card" href="projects/coffee-app.html">
+          <div class="cover">
+            <img src="assets/p3.jpg" alt="Coffee App" />
+          </div>
+          <div class="meta">
+            <h3>Coffee App</h3>
+            <p>Kotlin + Firebase ile kullanıcı girişi, veri ve bildirim altyapısı.</p>
+            <div class="tags">
+              <span class="tag">Kotlin</span>
+              <span class="tag">Firebase</span>
+              <span class="tag">Auth</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- GAME JAMS -->
+    <section class="section" id="gamejams">
+      <div class="section-title">
+        <h2>Katıldığım Game Jam’ler</h2>
+      </div>
+
+      <div class="grid">
+        <a class="card" href="#" target="_blank" rel="noreferrer">
+          <div class="cover">
+            <img src="assets/Jam2.jpg" alt="AYAZ JAM 2025" />
+          </div>
+          <div class="meta">
+            <h3>AYAZ JAM 2025</h3>
+            <p>Ferhat ile şirinin birbiriyle tanışmasını anlatan 2d plartform oyunu.</p>
+            <div class="tags">
+              <span class="tag">Unity</span>
+              <span class="tag">2D</span>
+              <span class="tag">Team</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="card" href="#" target="_blank" rel="noreferrer">
+          <div class="cover">
+            <img src="assets/Jam1.jpg" alt="JAMINATION 8" />
+          </div>
+          <div class="meta">
+            <h3>Jamination8</h3>
+            <p>Bombayı çözmek için ipucu aradaığımız rogue like oyun. </p>
+            <div class="tags">
+              <span class="tag">Unity</span>
+              <span class="tag">Prototype</span>
+              <span class="tag">48h</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</body>
 </html>
