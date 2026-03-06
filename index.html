@@ -1,158 +1,413 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Murat Enes Çatı | Portfolio</title>
-  <meta name="description" content="Murat Enes Çatı - Projeler ve detaylar." />
-  <link rel="stylesheet" href="styles.css" />
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Murat Enes Çatı | Portfolio</title>
+
+<style>
+
+:root{
+--bg:#0b0f14;
+--text:#eef2ff;
+--muted:#a7b0c3;
+--line:rgba(255,255,255,.08);
+--accent:#c7f34f;
+--max:1100px;
+--shadow:0 20px 70px rgba(0,0,0,.55);
+}
+
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:system-ui;
+color:var(--text);
+background:radial-gradient(1200px 700px at 20% 10%, rgba(124,92,255,.15), transparent 60%),var(--bg);
+}
+
+.container{
+max-width:var(--max);
+margin:auto;
+padding:30px 20px;
+}
+
+a{
+color:inherit;
+text-decoration:none;
+}
+
+/* HERO */
+
+.hero{
+min-height:80vh;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.hero-center{
+text-align:center;
+padding:60px 40px;
+border-radius:20px;
+background:rgba(255,255,255,.03);
+border:1px solid rgba(255,255,255,.08);
+box-shadow:var(--shadow);
+}
+
+/* AVATAR */
+
+.avatar{
+width:260px;
+height:260px;
+margin:auto;
+border-radius:50%;
+overflow:hidden;
+border:3px solid rgba(255,255,255,.15);
+box-shadow:0 20px 60px rgba(0,0,0,.6);
+transition:.3s;
+}
+
+.avatar:hover{
+transform:scale(1.05);
+}
+
+.avatar img{
+width:100%;
+height:100%;
+object-fit:cover;
+object-position:center 25%;
+}
+
+/* TEXT */
+
+.hero h1{
+margin-top:25px;
+font-size:40px;
+}
+
+.subtitle{
+color:var(--muted);
+margin-top:8px;
+}
+
+/* SOCIAL */
+
+.socials{
+margin-top:25px;
+display:flex;
+gap:18px;
+justify-content:center;
+}
+
+.socials a{
+width:55px;
+height:55px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+transition:.2s;
+}
+
+.socials a:hover{
+transform:translateY(-3px);
+box-shadow:0 0 15px rgba(199,243,79,.7);
+border-color:var(--accent);
+}
+
+.socials img{
+width:26px;
+}
+ /* Skills */
+
+.skills{
+margin-top:25px;
+display:flex;
+gap:18px;
+justify-content:center;
+}
+
+.skills a{
+width:55px;
+height:55px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+transition:.2s;
+}
+
+.skills a:hover{
+transform:translateY(-3px);
+box-shadow:0 0 15px rgba(199,243,79,.7);
+border-color:var(--accent);
+}
+
+.skills img{
+width:26px;
+}
+/* PROJECT BUTTON */
+
+.project-btn{
+margin-top:35px;
+display:inline-block;
+padding:12px 26px;
+border-radius:30px;
+background:var(--accent);
+color:#000;
+font-weight:700;
+transition:.2s;
+}
+
+.project-btn:hover{
+transform:scale(1.05);
+}
+
+/* PROJECTS */
+
+.section{
+margin-top:60px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.card{
+border-radius:18px;
+border:1px solid var(--line);
+background:rgba(255,255,255,.03);
+overflow:hidden;
+transition:.2s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+border-color:var(--accent);
+}
+
+.cover{
+height:180px;
+}
+
+.cover img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.meta{
+padding:15px;
+}
+
+.meta h3{
+margin:0 0 5px;
+}
+
+.meta p{
+color:var(--muted);
+font-size:14px;
+}
+/* YARISMALAR */
+
+.section{
+margin-top:60px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.card{
+border-radius:18px;
+border:1px solid var(--line);
+background:rgba(255,255,255,.03);
+overflow:hidden;
+transition:.2s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+border-color:var(--accent);
+}
+
+.cover{
+height:180px;
+}
+
+.cover img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.meta{
+padding:15px;
+}
+
+.meta h3{
+margin:0 0 5px;
+}
+
+.meta p{
+color:var(--muted);
+font-size:14px;
+}
+
+</style>
+
 </head>
 
 <body>
-  <div class="container">
 
-    <!-- HERO -->
-    <section class="hero" id="top">
-      <div class="hero-inner">
-        <div class="bigtype">PORTFOLIO</div>
+<div class="container">
 
-        <div class="nameblock">
-          <div>
-            <h1>Murat Enes Çatı</h1>
-            <p>Software Engineering · Web / Security / Unity</p>
-          </div>
+<!-- HERO -->
 
-          <div class="badges">
+<section class="hero">
 
-<a class="badge" href="https://github.com/muratenescati" target="_blank">
-<img src="assets/github.svg" alt="GitHub">
+<div class="hero-center">
+
+<div class="avatar">
+<img src="assets/hero.jpg">
+</div>
+
+<h1>Murat Enes Çatı</h1>
+
+<p class="subtitle">
+Software Engineering · Web / Security / Unity
+</p>
+
+<div class="socials">
+
+<a href="https://github.com/muratenescati" target="_blank">
+<img src="assets/github.svg">
+</a>
+<br>
+<a href="https://www.linkedin.com/in/murat-enes-%C3%A7at%C4%B1-3a82211b2/" target="_blank">
+<img src="assets/linkedin.svg">
 </a>
 
-<a class="badge" href="https://www.linkedin.com/in/murat-enes-%C3%A7at%C4%B1-3a82211b2/" target="_blank">
-<img src="assets/images.img" alt="LinkedIn">
+<a href="https://www.youtube.com/@muratenescati" target="_blank">
+<img src="assets/youtube.svg">
 </a>
 
-<a class="badge" href="https://www.youtube.com/@muratenescati" target="_blank">
-<img src="assets/youtube.svg" alt="YouTube">
+<a href="mailto:muratcati80@gmail.com">
+<img src="assets/gmail.svg">
 </a>
+</div>
+<br> <div class="skills">
 
-<a class="badge" href="mailto:muratcati80@gmail.com">
-<img src="assets/mail.svg" alt="Mail">
+<img src="assets/cplusplus.svg">
+
+<img src="assets/python.svg">
+
+<img src="assets/unity.svg">
+
+<img src="assets/javascript.svg">
+
+<img src="assets/html5.svg">
+
+</div>
+</div>
+
+<a class="project-btn" href="#projects">
+Projects ↓
 </a>
 
 </div>
 
-        <div class="portrait-wrap">
-          <div class="portrait">
-            <img src="assets/hero.jpg" alt="Murat Enes Çatı" />
-          </div>
-        </div>
+</section>
 
-        <a class="orb" href="#projects" aria-label="Projeleri gör">
-          <div class="core">↓</div>
-          <small>PROJECTS</small>
-        </a>
+<!-- PROJECTS -->
 
-        <a class="scrollhint" href="#projects">
-          <div class="arrow"><span>↓</span></div>
-          Scroll
-        </a>
-      </div>
-    </section>
+<section class="section" id="projects">
 
-    <!-- PROJECTS -->
-    <section class="section" id="projects">
-      <div class="section-title">
-        <h2>Projeler</h2>
-      </div>
+<h2>Projeler</h2>
 
-      <div class="grid">
-        <a class="card" href="projects/ztna.html">
-          <div class="cover">
-            <img src="assets/p1.jpg" alt="ZTNA Web Site" />
-          </div>
-          <div class="meta">
-            <h3>ZTNA Web Site</h3>
-            <p>Keycloak + Node.js + Nginx ile güvenli erişim & auth akışı.</p>
-            <div class="tags">
-              <span class="tag">Keycloak</span>
-              <span class="tag">OIDC</span>
-              <span class="tag">JWT</span>
-            </div>
-          </div>
-        </a>
+<div class="grid">
 
-        <a class="card" href="projects/cat-avatar.html">
-          <div class="cover">
-            <img src="assets/p2.jpg" alt="Desktop Cat Avatar" />
-          </div>
-          <div class="meta">
-            <h3>Desktop Cat Avatar</h3>
-            <p>Unity + Python ile masaüstü etkileşimli avatar (komut → animasyon).</p>
-            <div class="tags">
-              <span class="tag">Unity</span>
-              <span class="tag">C#</span>
-              <span class="tag">Python</span>
-            </div>
-          </div>
-        </a>
+<div class="card">
+<div class="cover">
+<img src="assets/p1.jpg">
+</div>
 
-        <a class="card" href="projects/coffee-app.html">
-          <div class="cover">
-            <img src="assets/p3.jpg" alt="Coffee App" />
-          </div>
-          <div class="meta">
-            <h3>Coffee App</h3>
-            <p>Kotlin + Firebase ile kullanıcı girişi, veri ve bildirim altyapısı.</p>
-            <div class="tags">
-              <span class="tag">Kotlin</span>
-              <span class="tag">Firebase</span>
-              <span class="tag">Auth</span>
-            </div>
-          </div>
-        </a>
-      </div>
-    </section>
+<div class="meta">
+<h3>ZTNA Web Site</h3>
+<p>Keycloak + Node.js güvenli giriş sistemi.</p>
+</div>
+</div>
 
-    <!-- GAME JAMS -->
-    <section class="section" id="gamejams">
-      <div class="section-title">
-        <h2>Katıldığım Game Jam’ler</h2>
-      </div>
+<div class="card">
+<div class="cover">
+<img src="assets/p2.jpg">
+</div>
 
-      <div class="grid">
-        <a class="card" href="#" target="_blank" rel="noreferrer">
-          <div class="cover">
-            <img src="assets/Jam2.jpg" alt="AYAZ JAM 2025" />
-          </div>
-          <div class="meta">
-            <h3>AYAZ JAM 2025</h3>
-            <p>Ferhat ile şirinin birbiriyle tanışmasını anlatan 2d plartform oyunu.</p>
-            <div class="tags">
-              <span class="tag">Unity</span>
-              <span class="tag">2D</span>
-              <span class="tag">Team</span>
-            </div>
-          </div>
-        </a>
+<div class="meta">
+<h3>Desktop Cat Avatar</h3>
+<p>Unity + Python masaüstü AI avatar.</p>
+</div>
+</div>
 
-        <a class="card" href="#" target="_blank" rel="noreferrer">
-          <div class="cover">
-            <img src="assets/Jam1.jpg" alt="JAMINATION 8" />
-          </div>
-          <div class="meta">
-            <h3>Jamination8</h3>
-            <p>Bombayı çözmek için ipucu aradaığımız rogue like oyun. </p>
-            <div class="tags">
-              <span class="tag">Unity</span>
-              <span class="tag">Prototype</span>
-              <span class="tag">48h</span>
-            </div>
-          </div>
-        </a>
-      </div>
-    </section>
+<div class="card">
+<div class="cover">
+<img src="assets/p3.jpg">
+</div>
 
-  </div>
+<div class="meta">
+<h3>Coffee App</h3>
+<p>Kotlin + Firebase mobil uygulama.</p>
+</div>
+</div>
+
+</div>
+
+</section>
+<!-- YARIŞMALAR -->
+
+<section class="section" id="yarismalar">
+
+<h2>Yarışmalar</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="cover">
+<img src="assets/jam1.jpg">
+</div>
+
+<div class="meta">
+<h3>Jamination8</h3>
+</div>
+</div>
+
+<div class="card">
+<div class="cover">
+<img src="assets/jam2.jpg">
+</div>
+
+<div class="meta">
+<h3>AyazJam 2025</h3>
+</div>
+</div>
+
+
+</div>
+
+</section>
+
+</div>
+
 </body>
 </html>
