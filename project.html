@@ -5,46 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Project Details</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <header class="navbar">
-    <h2><a href="index.html" class="logo-link">MEÇ</a></h2>
-    <nav>
-      <a href="index.html#about">About</a>
-      <a href="index.html#projects">Projects</a>
-      <a href="index.html#research">Research</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
+    <div class="nav-container">
+      <h2><a href="index.html" class="logo-link">MEÇ</a></h2>
+      <div class="nav-right">
+        <nav>
+          <a href="index.html#about" class="lang-text" data-tr="Hakkımda" data-en="About">About</a>
+          <a href="index.html#projects" class="lang-text" data-tr="Projeler" data-en="Projects">Projects</a>
+          <a href="index.html#gamejam">Gamejam</a>
+          <a href="index.html#contact" class="lang-text" data-tr="İletişim" data-en="Contact">Contact</a>
+        </nav>
+        <button id="langToggle" class="btn-lang">TR</button>
+      </div>
+    </div>
   </header>
 
-  <main class="detail-page">
+  <main class="detail-page container">
     <div class="detail-container">
+      <a href="index.html#projects" class="back-link lang-text" data-tr="← Projelere Dön" data-en="← Back to Projects">← Back to Projects</a>
+      <img id="projectImage" class="detail-image" src="" alt="" style="display: none;" />
 
-      <a href="index.html#projects" class="back-link">← Back to Projects</a>
-
-      <img id="projectImage" class="detail-image" src="" alt="Project Image" />
-
-      <section class="detail-card">
+      <section class="detail-card-merged">
         <h1 id="title"></h1>
         <p id="desc" class="detail-desc"></p>
-
         <div class="detail-buttons">
-          <a id="demo" class="btn" target="_blank">Live Demo</a>
-          <a id="drive" class="btn" target="_blank">Drive Link</a>
+          <a id="demo" class="btn btn-primary lang-text" data-tr="Canlı Demo" data-en="Live Demo" target="_blank">Live Demo</a>
+          <a id="drive" class="btn btn-outline lang-text" data-tr="Drive Linki" data-en="Drive Link" target="_blank">Drive Link</a>
         </div>
-
         <hr />
-
-        <h2>Highlights</h2>
+        <h2 class="lang-text" data-tr="Öne Çıkanlar" data-en="Highlights">Highlights</h2>
         <ul id="highlights" class="detail-list"></ul>
-
         <hr />
-
-        <h2>Technologies</h2>
-        <div id="techTags" class="tags"></div>
+        <h2 class="lang-text" data-tr="Teknolojiler" data-en="Technologies">Technologies</h2>
+        <div id="techTags" class="tags-fixed"></div>
       </section>
-
     </div>
   </main>
 
@@ -54,173 +52,72 @@
 
     const data = {
       ztna: {
-        title: "ZTNA Security Platform",
-        color: "#2563EB",
-        soft: "#DCEBFF",
-        desc: "This project is a network access control system developed based on Zero Trust principles. Unlike traditional security models that assume the internal network is trusted, Zero Trust requires verification of every user and every access request. Within this project, a secure access architecture was designed with a strong focus on authentication, authorization and protected backend communication.",
-        image: "ztna.png",
-        demo: "https://wbt-project.com/",
-        drive: "https://drive.google.com/drive/u/0/folders/1oybOvUmxSDfLu-fk1miwkdrYUtnVj_67",
-        highlights: [
-          "Central identity management with Keycloak",
-          "JWT-based secure session management",
-          "Role-Based Access Control (RBAC) architecture",
-          "Central authentication and Single Sign-On structure",
-          "Secure API access control mechanism",
-          "Microservice-based secure API architecture",
-          "User authentication system",
-          "Authorization layer and role-based access management",
-          "Token-based secure access control"
-        ],
-        tech: [
-          "Keycloak",
-          "JWT",
-          "RBAC",
-          "Authentication",
-          "Authorization",
-          "SSO",
-          "API Security",
-          "Backend System",
-          "Zero Trust"
-        ]
+        en: { title: "ZTNA Security Platform", desc: "Network access control system developed based on Zero Trust principles.", highlights: ["Keycloak Identity Management", "JWT-based sessions", "RBAC Architecture"] },
+        tr: { title: "ZTNA Güvenlik Platformu", desc: "Sıfır Güven prensiplerine dayalı ağ erişim kontrol sistemi.", highlights: ["Keycloak Kimlik Yönetimi", "JWT tabanlı oturumlar", "Rol Tabanlı Erişim"] },
+        image: "ztna.jpg", demo: "https://wbt-project.com/", drive: "https://drive.google.com/drive/u/0/folders/1oybOvUmxSDfLu-fk1miwkdrYUtnVj_67", tech: ["Keycloak", "JWT", "Zero Trust", "IAM"]
       },
-
       finance: {
-        title: "Finance Tracker",
-        color: "#16A34A",
-        soft: "#DCF6E7",
-        desc: "This project is a personal finance and investment tracking application that enables users to monitor their income and expenses while also analyzing the performance of investment tools. The system was designed with a user-oriented approach and includes data-focused reporting and analysis screens for better financial awareness.",
-        image: "finance.png",
-        demo: "#",
-        drive: "https://drive.google.com/drive/u/0/folders/1W6BsINzBa0S53d98Snp6pdedZ7eNA4nT",
-        highlights: [
-          "Income and expense tracking system",
-          "Database design and structured data management",
-          "Financial analysis and reporting screens",
-          "User-oriented finance management interface",
-          "Investment and budget monitoring approach"
-        ],
-        tech: [
-          "Finance Management",
-          "SQL",
-          "Database Design",
-          "Reporting",
-          "Data Analysis",
-          "UI/UX"
-        ]
+        en: { title: "Finance Tracker", desc: "Personal finance and investment tracking application.", highlights: ["Income/Expense tracking", "Financial analysis", "UI/UX focus"] },
+        tr: { title: "Finans Takipçisi", desc: "Kişisel finans ve yatırım takip uygulaması.", highlights: ["Gelir/Gider takibi", "Finansal analiz", "Kullanıcı odaklı tasarım"] },
+        image: "finance.jpg", demo: "#", drive: "https://drive.google.com/drive/u/0/folders/1W6BsINzBa0S53d98Snp6pdedZ7eNA4nT", tech: ["C#", "SQL", "Mock Data", "Data Analysis"]
       },
-
       coffee: {
-        title: "Coffee App",
-        color: "#92400E",
-        soft: "#FDF6EC",
-        desc: "CoffeeApp is a mobile coffee ordering and management application that allows users to browse coffee and dessert products, place orders and review their order history. The application was developed with modern mobile interface principles and adopts a user experience focused design supported by Firebase services.",
-        image: "coffee.png",
-        demo: "#",
-        drive: "https://drive.google.com/drive/u/0/folders/1x1rumdt4soJdZDIjXbeZjCs4x2iwKG5K",
-        highlights: [
-          "Firebase Authentication based login and registration system",
-          "Firebase Realtime Database integration for data management",
-          "Firebase Storage integration for image content",
-          "Coffee and dessert product listing",
-          "Product detail pages",
-          "Order creation and order history display",
-          "User profile management",
-          "Modern mobile interface design focused on usability"
-        ],
-        tech: [
-          "Android",
-          "Java",
-          "Firebase Authentication",
-          "Firebase Realtime Database",
-          "Firebase Storage",
-          "Mobile UI/UX"
-        ]
+        en: { title: "Coffee App", desc: "Mobile coffee ordering application built with Firebase.", highlights: ["Firebase Authentication", "Realtime Database", "Kotlin/Android"] },
+        tr: { title: "Kahve Uygulaması", desc: "Firebase ile geliştirilen mobil kahve sipariş sistemi.", highlights: ["Firebase Kimlik Doğrulama", "Gerçek Zamanlı Veritabanı", "Kotlin/Android"] },
+        image: "coffee.jpg", demo: "#", drive: "https://drive.google.com/drive/u/0/folders/1x1rumdt4soJdZDIjXbeZjCs4x2iwKG5K", tech: ["Android", "Firebase", "Kotlin", "Java"]
       },
-
       avatar: {
-        title: "Interactive AI Avatar",
-        color: "#7C3AED",
-        soft: "#E8E0FF",
-        desc: "In this project, an AI-powered interactive character was developed for story-based games. The system is capable of building dynamic interaction with the player and generating contextual responses using natural language processing techniques. The aim of the project is to combine intelligent interaction with immersive software experiences.",
-        image: "avatar.png",
-        demo: "#",
-        drive: "https://drive.google.com/drive/u/0/folders/1TGqWx-TUM85WMUxYJkSZf0oygUJAeu55",
-        highlights: [
-          "Natural language processing based response system",
-          "AI character behavior integrated into a story-based game logic",
-          "Dynamic reactions according to player input",
-          "Interactive companion design for immersive experiences",
-          "AI integration for user-facing interaction systems"
-        ],
-        tech: [
-          "Python",
-          "AI Integration",
-          "NLP",
-          "Interactive Systems",
-          "Game Interaction",
-          "Emotional Interaction"
-        ]
+        en: { title: "Interactive AI Avatar", desc: "AI-powered interactive desktop character for games.", highlights: ["NLP based response", "Unity Integration", "Desktop Avatar System"] },
+        tr: { title: "İnteraktif AI Avatar", desc: "Oyunlar için yapay zeka destekli masaüstü karakteri.", highlights: ["NLP tabanlı yanıt sistemi", "Unity Entegrasyonu", "Masaüstü Avatar Sistemi"] },
+        image: "avatar.jpg", demo: "#", drive: "https://drive.google.com/drive/u/0/folders/1TGqWx-TUM85WMUxYJkSZf0oygUJAeu55", tech: ["Python", "Unity", "AI", "NLP"]
+      },
+      jamination8: {
+        en: { title: "Jamination8", desc: "A gritty, hand-drawn rogue-like built by four of us.", highlights: ["Hand-drawn art", "Tight mechanics", "Rogue-like loop"] },
+        tr: { title: "Jamination8", desc: "4 kişi tarafından geliştirilen el çizimi rogue-like oyunu.", highlights: ["El çizimi sanat", "Sıkı mekanikler", "Rogue-like döngüsü"] },
+        image: "avatar.jpg", demo: "#", drive: "#", tech: ["Unity", "C#", "2D", "Retro"]
+      },
+      ayazjam2: {
+        en: { title: "Ayazjam 2", desc: "Hand-drawn world with custom physics engine.", highlights: ["Custom physics", "Retro style", "5-person team"] },
+        tr: { title: "Ayazjam 2", desc: "Özel fizik motoruna sahip el çizimi dünya.", highlights: ["Özel fizik motoru", "Retro tarz", "5 kişilik ekip"] },
+        image: "avatar.jpg", demo: "#", drive: "#", tech: ["Unity", "C#", "Physics", "Retro"]
       }
     };
 
-    const item = data[project];
+    let currentLang = localStorage.getItem('siteLang') || 'en';
+    const langToggleBtn = document.getElementById('langToggle');
 
-    if (!item) {
-      document.querySelector(".detail-container").innerHTML = `
-        <section class="detail-card">
-          <h1>Project not found</h1>
-          <p>The project you requested does not exist.</p>
-          <a href="index.html#projects" class="btn">Back to Projects</a>
-        </section>
-      `;
-    } else {
-
-      document.documentElement.style.setProperty(
-      '--project-color',
-      item.color
-      );
+    function render() {
+      const item = data[project];
+      if(!item) return;
+      const langData = item[currentLang];
+      document.getElementById("title").innerText = langData.title;
+      document.getElementById("desc").innerText = langData.desc;
       
-      document.documentElement.style.setProperty(
-      '--project-soft-color',
-      item.soft
-      );
-
-      document.getElementById("title").innerText = item.title;
-      document.getElementById("desc").innerText = item.desc;
-      document.getElementById("projectImage").src = item.image;
-      document.getElementById("projectImage").alt = item.title;
-      const demoBtn = document.getElementById("demo");
-      const driveBtn = document.getElementById("drive");
-
-      if (item.demo && item.demo !== "#") {
-        demoBtn.href = item.demo;
-      } else {
-        demoBtn.style.display = "none";
-      }
-
-      if (item.drive && item.drive !== "#") {
-        driveBtn.href = item.drive;
-      } else {
-        driveBtn.style.display = "none";
-      }
+      const imgEl = document.getElementById("projectImage");
+      if(item.image) { imgEl.src = item.image; imgEl.style.display = "block"; }
 
       const highlightsEl = document.getElementById("highlights");
-      item.highlights.forEach(point => {
-        const li = document.createElement("li");
-        li.textContent = point;
-        highlightsEl.appendChild(li);
-      });
+      highlightsEl.innerHTML = "";
+      langData.highlights.forEach(h => { const li = document.createElement("li"); li.innerText = h; highlightsEl.appendChild(li); });
 
-      const techTagsEl = document.getElementById("techTags");
-      item.tech.forEach(tag => {
-        const span = document.createElement("span");
-        span.className = "tag";
-        span.textContent = tag;
-        techTagsEl.appendChild(span);
+      const techEl = document.getElementById("techTags");
+      techEl.innerHTML = "";
+      item.tech.forEach(t => { const s = document.createElement("span"); s.className = "tag-fixed"; s.innerText = t; techEl.appendChild(s); });
+
+      langToggleBtn.textContent = currentLang === 'en' ? 'TR' : 'EN';
+      document.querySelectorAll('.lang-text').forEach(el => {
+        const trans = el.getAttribute(`data-${currentLang}`);
+        if(trans) el.innerText = trans;
       });
     }
-  </script>
 
+    langToggleBtn.addEventListener('click', () => {
+      currentLang = currentLang === 'en' ? 'tr' : 'en';
+      localStorage.setItem('siteLang', currentLang);
+      render();
+    });
+
+    render();
+  </script>
 </body>
 </html>

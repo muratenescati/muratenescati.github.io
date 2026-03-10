@@ -5,179 +5,211 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Murat Enes Çatı | Portfolio</title>
 <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <header class="navbar">
-<h2>MEÇ</h2>
-
-<nav>
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Projects</a>
-  <a href="#research">Research</a>
-  <a href="#contact">Contact</a>
-</nav>
+  <div class="nav-container">
+    <h2><a href="index.html" class="logo-link">MEÇ</a></h2>
+    <div class="nav-right">
+      <nav>
+        <a href="#about" class="lang-text" data-tr="Hakkımda" data-en="About">About</a>
+        <a href="#skills" class="lang-text" data-tr="Yetenekler" data-en="Skills">Skills</a>
+        <a href="#projects" class="lang-text" data-tr="Projeler" data-en="Projects">Projects</a>
+        <a href="#gamejam">Gamejam</a>
+        <a href="#contact" class="lang-text" data-tr="İletişim" data-en="Contact">Contact</a>
+      </nav>
+      <button id="langToggle" class="btn-lang">TR</button>
+    </div>
+  </div>
 </header>
 
-<section class="hero">
+<main>
+  
+  <div class="container">
+    <section class="hero">
+      <div class="hero-text">
+        <div class="hero-badges">
+          <span class="hero-badge">Python</span>
+          <span class="hero-badge">Cybersecurity</span>
+          <span class="hero-badge">Game Dev</span>
+          <span class="hero-badge">Backend</span>
+          <span class="hero-badge">AI</span>
+        </div>
+        
+        <h1>Murat Enes Çatı</h1>
+        <h3 class="lang-text" data-tr="Yazılım Mühendisliği Öğrencisi | Siber Güvenlik & Oyun Geliştirici" data-en="Software Engineering Student | Cybersecurity & Game Developer">
+          Software Engineering Student | Cybersecurity & Game Developer
+        </h3>
+        
+        <p class="lang-text" 
+           data-tr="Merhaba, ben Murat. 3. sınıf yazılım mühendisliği öğrencisi olarak güvenli sistem mimarileri, yapay zeka ve oyun geliştirme üzerine odaklanıyorum. Düzenli olarak Gamejam yarışmalarına katılarak stres altında hızlı prototipleme becerilerimi geliştiriyorum." 
+           data-en="Hello, I'm Murat. As a third-year software engineering student, I focus on cybersecurity, AI, and game development. I regularly participate in game jams to improve my skills.">
+          Hello, I'm Murat. As a third-year software engineering student, I focus on cybersecurity, AI, and game development.
+        </p>
 
-<img src="profile.jpg" class="profile-photo">
-
-<div class="hero-text">
-
-<h1>Murat Enes Çatı</h1>
-
-<h3>Software Engineering Student | Cybersecurity & AI Enthusiast</h3>
-
-<p>
-Hello, I'm Murat. As a third-year software engineering student, I focus on
-cybersecurity, modern network architectures and artificial intelligence
-applications. My work includes Zero Trust security architectures,
-authentication systems and interactive AI based applications.
-</p>
-
-<div class="hero-badges">
-  <span class="hero-badge">Python</span>
-  <span class="hero-badge">Cybersecurity</span>
-  <span class="hero-badge">AI</span>
-  <span class="hero-badge">Backend</span>
-  <span class="hero-badge">ZTNA</span>
-</div>
-
-<div class="hero-buttons">
-
-<a href="CV.pdf" target="_blank" class="btn">View CV</a>
-
-<a href="https://github.com/muratenescati" target="_blank" class="btn">GitHub</a>
-
-<a href="www.linkedin.com/in/murat-enes-çati-3a82211b2" target="_blank" class="btn">LinkedIn</a>
-
-</div>
-
-</div>
-
-</section>
-
-<div class="hero-divider"></div>  
-
-<section id="about" class="about-section">
-
-<h2>About Me</h2>
-
-<p>
-I am a third-year Software Engineering student focusing on secure system architectures,
-modern networking technologies and software development. My research interests include
-Zero Trust Network Access (ZTNA), authentication and authorization systems and
-Intent-Based Networking (IBN).
-</p>
-
-<p>
-I develop backend architectures, API based systems and data-driven software solutions.
-Alongside system design, I also work on artificial intelligence integration and
-interactive systems to build modern and intelligent software applications.
-</p>
-
-</section>
-
-<section id="skills" class="skills-section">
-
-<h2>Technical Skills</h2>
-
-<div class="skills-grid">
-
-<div class="skill-card">
-<h3>Programming</h3>
-<p>Python, Java, C, C++, SQL</p>
-</div>
-
-<div class="skill-card">
-<h3>Security</h3>
-<p>ZTNA, Authentication, Authorization, RBAC</p>
-</div>
-
-<div class="skill-card">
-<h3>Identity & Access</h3>
-<p>Keycloak, JWT, SSO</p>
-</div>
-
-<div class="skill-card">
-<h3>AI & Data</h3>
-<p>AI Integration, NLP, Data Analysis</p>
-</div>
-
-<div class="skill-card">
-<h3>Tools</h3>
-<p>Git, Docker, REST API</p>
-</div>
-
-<div class="skill-card">
-<h3>Soft Skills</h3>
-<p>Technical Reporting, Problem Solving, Project Management</p>
-</div>
-
-</div>
-
-</section>
-
-<section id="projects" class="projects-section">
-  <h2>Projects</h2>
-
-  <div class="projects">
-
-    <div class="project-card card-ztna">
-      <div class="project-content">
-        <span class="project-tag">Security</span>
-        <h3>ZTNA Security Platform</h3>
-        <p>Zero Trust Network Access architecture using Keycloak and JWT.</p>
-        <a href="project.html?project=ztna" class="project-link">View Project →</a>
+        <div class="hero-buttons">
+          <a href="CV.pdf" target="_blank" class="btn btn-primary lang-text" data-tr="CV Görüntüle" data-en="View CV">View CV</a>
+          <a href="https://github.com/muratenescati" target="_blank" class="btn btn-outline">GitHub</a>
+          <a href="www.linkedin.com/in/murat-enes-çati-3a82211b2" target="_blank" class="btn btn-outline">LinkedIn</a>
+        </div>
       </div>
-    </div>
 
-    <div class="project-card card-finance">
-      <div class="project-content">
-        <span class="project-tag">Finance</span>
-        <h3>Finance Tracker</h3>
-        <p>Personal finance and investment tracking application.</p>
-        <a href="project.html?project=finance" class="project-link">View Project →</a>
+      <div class="hero-image-wrapper">
+        <img src="profile.jpg" class="profile-photo" alt="Murat Enes Çatı">
       </div>
-    </div>
+    </section>
 
-    <div class="project-card card-coffee">
-      <div class="project-content">
-        <span class="project-tag">Mobile App</span>
-        <h3>Coffee App</h3>
-        <p>Mobile coffee ordering system built with Firebase backend.</p>
-        <a href="project.html?project=coffee" class="project-link">View Project →</a>
+    <section id="about" class="about-section">
+      <div class="section-header">
+        <h2 class="lang-text" data-tr="Hakkımda" data-en="About Me">About Me</h2>
       </div>
-    </div>
-
-    <div class="project-card card-avatar">
-      <div class="project-content">
-        <span class="project-tag">AI</span>
-        <h3>Interactive AI Avatar</h3>
-        <p>AI powered interactive avatar for story-based games.</p>
-        <a href="project.html?project=avatar" class="project-link">View Project →</a>
+      <div class="about-clean-content">
+        <p class="lang-text" 
+           data-tr="Ankara Üniversitesinde aktif olarak okuyan 3. sınıf yazılım mühendisliği öğrencisiyim. ZTNA, kimlik doğrulama sistemleri ve API tabanlı mimariler geliştiriyorum." 
+           data-en="I am a third-year Software Engineering student at Ankara University focusing on ZTNA and secure architectures.">
+          I am a third-year Software Engineering student at Ankara University focusing on ZTNA and secure architectures. [cite: 8, 9]
+        </p>
+        <p class="lang-text" 
+           data-tr="Sistem tasarımının yanı sıra hobim olan oyun yapımına da büyük vakit ayırıyorum. Unity ve C# kullanarak interaktif hikaye tabanlı yapay zeka destekli karakterler geliştiriyorum." 
+           data-en="Alongside system design, I dedicate significant time to game development using Unity and C#.">
+          Alongside system design, I dedicate significant time to game development using Unity and C#. [cite: 17, 51]
+        </p>
       </div>
-    </div>
+    </section>
 
+    <section id="skills" class="skills-section">
+      <div class="section-header">
+        <h2 class="lang-text" data-tr="Teknik Yetenekler" data-en="Technical Skills">Technical Skills</h2>
+      </div>
+      <div class="skills-grid-large">
+        <div class="skill-card-big">
+          <h3 class="lang-text" data-tr="Programlama" data-en="Programming">Programming</h3>
+          <p>Python, Java, C, C++, C#, SQL</p> [cite: 22, 26, 27, 28]
+        </div>
+        <div class="skill-card-big dance-border">
+          <h3 class="lang-text" data-tr="Oyun Geliştirme" data-en="Game Development">Game Development</h3>
+          <p>Unity, Animation Controllers, Game Mechanics, Custom Physics</p> [cite: 15, 29, 51]
+        </div>
+        <div class="skill-card-big">
+          <h3 class="lang-text" data-tr="Güvenlik" data-en="Security">Security</h3>
+          <p>ZTNA, Keycloak (IAM), JWT, RBAC, AWS Security</p> [cite: 37, 52, 53]
+        </div>
+        <div class="skill-card-big">
+          <h3 class="lang-text" data-tr="Yapay Zeka & Veri" data-en="AI & Data">AI & Data</h3>
+          <p>LLM Integration, NLP, Data Analysis, Mock Data Processing</p> [cite: 16, 33]
+        </div>
+      </div>
+    </section>
   </div>
-</section>
 
-<section id="contact">
+  <section id="projects" class="projects-full-dark">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="lang-text" data-tr="Projeler" data-en="Projects">Projects</h2>
+      </div>
+      <div class="projects">
+        <div class="project-card card-ztna">
+          <div class="project-content">
+            <span class="project-tag">Security</span>
+            <h3>ZTNA Security Platform</h3>
+            <p class="lang-text" data-tr="Keycloak ve JWT kullanılarak geliştirilmiş Sıfır Güven mimarisi." data-en="Zero Trust architecture using Keycloak and JWT.">Zero Trust architecture using Keycloak and JWT. [cite: 34, 37]</p>
+            <a href="project.html?project=ztna" class="project-link lang-text" data-tr="Projeyi İncele →" data-en="View Project →">View Project →</a>
+          </div>
+        </div>
+        <div class="project-card card-finance">
+          <div class="project-content">
+            <span class="project-tag">Finance</span>
+            <h3>Finance Tracker</h3>
+            <p class="lang-text" data-tr="Kişisel finans ve yatırım takip uygulaması." data-en="Personal finance and investment tracking application.">Personal finance and investment tracking application. [cite: 25, 30]</p>
+            <a href="project.html?project=finance" class="project-link lang-text" data-tr="Projeyi İncele →" data-en="View Project →">View Project →</a>
+          </div>
+        </div>
+        <div class="project-card card-coffee">
+          <div class="project-content">
+            <span class="project-tag">Mobile App</span>
+            <h3>Coffee App</h3>
+            <p class="lang-text" data-tr="Firebase backend tabanlı mobil kahve sipariş sistemi." data-en="Mobile coffee ordering system built with Firebase.">Mobile coffee ordering system built with Firebase. [cite: 39, 45]</p>
+            <a href="project.html?project=coffee" class="project-link lang-text" data-tr="Projeyi İncele →" data-en="View Project →">View Project →</a>
+          </div>
+        </div>
+        <div class="project-card card-avatar">
+          <div class="project-content">
+            <span class="project-tag">AI / Game Dev</span>
+            <h3>Interactive AI Avatar</h3>
+            <p class="lang-text" data-tr="Oyunlar için yapay zeka destekli interaktif masaüstü avatarı." data-en="AI powered interactive desktop avatar for games.">AI powered interactive desktop avatar for games. [cite: 12, 16]</p>
+            <a href="project.html?project=avatar" class="project-link lang-text" data-tr="Projeyi İncele →" data-en="View Project →">View Project →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<h2>Contact</h2>
+  <div class="container">
+    <section id="gamejam" class="projects-section">
+      <div class="section-header">
+        <h2>Gamejam</h2>
+      </div>
+      <div class="projects">
+        <div class="project-card card-gamejam">
+          <div class="project-content">
+            <span class="project-tag">Game Dev</span>
+            <h3>Jamination8</h3>
+            <p class="lang-text" data-tr="4 kişi tarafından geliştirilen el çizimi rogue-like oyunu." data-en="A gritty, hand-drawn rogue-like built by four of us.">A gritty, hand-drawn rogue-like built by four of us.</p>
+            <a href="project.html?project=jamination8" class="project-link lang-text" data-tr="Projeyi İncele →" data-en="View Project →">View Project →</a>
+          </div>
+        </div>
+        <div class="project-card card-gamejam">
+          <div class="project-content">
+            <span class="project-tag">Game Dev</span>
+            <h3>Ayazjam 2</h3>
+            <p class="lang-text" data-tr="5 kişilik ekip ile sıfırdan geliştirilen 2D bir dünya." data-en="A hand-drawn 2D world with custom physics.">A hand-drawn 2D world with custom physics.</p>
+            <a href="project.html?project=ayazjam2" class="project-link lang-text" data-tr="Projeyi İncele →" data-en="View Project →">View Project →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 
-<p>Email: muratcati80@gmail.com</p>
+  <section id="contact" class="contact-full-dark">
+    <div class="container">
+      <div class="contact-merged-content">
+        <h2 class="lang-text" data-tr="İletişime Geçelim" data-en="Let's Connect">Let's Connect</h2>
+        <p class="lang-text" data-tr="Yeni fırsatlara ve ortaklıklara açığım." data-en="I'm currently open to new opportunities.">I'm currently open to new opportunities. </p>
+        <a href="mailto:muratcati80@gmail.com" class="btn btn-primary-white">muratcati80@gmail.com</a> 
+      </div>
+    </div>
+  </section>
 
-</section>
+</main>
 
 <footer>
-
-<p>© 2026 Murat Enes Çatı</p>
-
+  <p>© 2026 Murat Enes Çatı. All rights reserved.</p>
 </footer>
+
+<script>
+  let currentLang = localStorage.getItem('siteLang') || 'en';
+  const langToggleBtn = document.getElementById('langToggle');
+  const langElements = document.querySelectorAll('.lang-text');
+
+  function updateTexts() {
+    langToggleBtn.textContent = currentLang === 'en' ? 'TR' : 'EN';
+    langElements.forEach(el => {
+      const translation = el.getAttribute(`data-${currentLang}`);
+      if(translation) el.textContent = translation;
+    });
+  }
+
+  langToggleBtn.addEventListener('click', () => {
+    currentLang = currentLang === 'en' ? 'tr' : 'en';
+    localStorage.setItem('siteLang', currentLang);
+    updateTexts();
+  });
+
+  updateTexts();
+</script>
 
 </body>
 </html>
