@@ -1,405 +1,183 @@
-<!doctype html>
-<html lang="tr">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Murat Enes Çatı | Portfolio</title>
-
-<style>
-
-:root{
---bg:#0b0f14;
---text:#eef2ff;
---muted:#a7b0c3;
---line:rgba(255,255,255,.08);
---accent:#c7f34f;
---max:1100px;
---shadow:0 20px 70px rgba(0,0,0,.55);
-}
-
-*{box-sizing:border-box}
-
-body{
-margin:0;
-font-family:system-ui;
-color:var(--text);
-background:radial-gradient(1200px 700px at 20% 10%, rgba(124,92,255,.15), transparent 60%),var(--bg);
-}
-
-.container{
-max-width:var(--max);
-margin:auto;
-padding:30px 20px;
-}
-
-a{
-color:inherit;
-text-decoration:none;
-}
-
-/* HERO */
-
-.hero{
-min-height:80vh;
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-.hero-center{
-text-align:center;
-padding:60px 40px;
-border-radius:20px;
-background:rgba(255,255,255,.03);
-border:1px solid rgba(255,255,255,.08);
-box-shadow:var(--shadow);
-}
-
-/* AVATAR */
-
-.avatar{
-width:260px;
-height:260px;
-margin:auto;
-border-radius:50%;
-overflow:hidden;
-border:3px solid rgba(255,255,255,.15);
-box-shadow:0 20px 60px rgba(0,0,0,.6);
-transition:.3s;
-}
-
-.avatar:hover{
-transform:scale(1.05);
-}
-
-.avatar img{
-width:100%;
-height:100%;
-object-fit:cover;
-object-position:center 25%;
-}
-
-/* TEXT */
-
-.hero h1{
-margin-top:25px;
-font-size:40px;
-}
-
-.subtitle{
-color:var(--muted);
-margin-top:8px;
-}
-
-/* SOCIAL */
-
-.socials{
-margin-top:25px;
-display:flex;
-gap:18px;
-justify-content:center;
-}
-
-.socials a{
-width:55px;
-height:55px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-background:rgba(255,255,255,.04);
-border:1px solid rgba(255,255,255,.08);
-transition:.2s;
-}
-
-.socials a:hover{
-transform:translateY(-3px);
-box-shadow:0 0 15px rgba(199,243,79,.7);
-border-color:var(--accent);
-}
-
-.socials img{
-width:26px;
-}
- /* Skills */
-
-.skills{
-margin-top:25px;
-display:flex;
-gap:18px;
-justify-content:center;
-}
-
-.skills a{
-width:55px;
-height:55px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-background:rgba(255,255,255,.04);
-border:1px solid rgba(255,255,255,.08);
-transition:.2s;
-}
-
-.skills a:hover{
-transform:translateY(-3px);
-box-shadow:0 0 15px rgba(199,243,79,.7);
-border-color:var(--accent);
-}
-
-.skills img{
-width:26px;
-}
-/* PROJECT BUTTON */
-
-.project-btn{
-margin-top:35px;
-display:inline-block;
-padding:12px 26px;
-border-radius:30px;
-background:var(--accent);
-color:#000;
-font-weight:700;
-transition:.2s;
-}
-
-.project-btn:hover{
-transform:scale(1.05);
-}
-
-/* PROJECTS */
-
-.section{
-margin-top:60px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
-}
-
-.card{
-border-radius:18px;
-border:1px solid var(--line);
-background:rgba(255,255,255,.03);
-overflow:hidden;
-transition:.2s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-border-color:var(--accent);
-}
-
-.cover{
-height:180px;
-}
-
-.cover img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-.meta{
-padding:15px;
-}
-
-.meta h3{
-margin:0 0 5px;
-}
-
-.meta p{
-color:var(--muted);
-font-size:14px;
-}
-/* YARISMALAR */
-
-.section{
-margin-top:60px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
-}
-
-.card{
-border-radius:18px;
-border:1px solid var(--line);
-background:rgba(255,255,255,.03);
-overflow:hidden;
-transition:.2s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-border-color:var(--accent);
-}
-
-.cover{
-height:180px;
-}
-
-.cover img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-.meta{
-padding:15px;
-}
-
-.meta h3{
-margin:0 0 5px;
-}
-
-.meta p{
-color:var(--muted);
-font-size:14px;
-}
-
-</style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uğurkan Yiğit Öztürk | Portfolio</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
+<header class="navbar">
+<h2>UYÖ</h2>
 
-<!-- HERO -->
+<nav>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#research">Research</a>
+  <a href="#contact">Contact</a>
+</nav>
+</header>
 
 <section class="hero">
 
-<div class="hero-center">
+<img src="profile.jpeg" class="profile-photo">
 
-<div class="avatar">
-<img src="assets/hero.jpg">
-</div>
+<div class="hero-text">
 
-<h1>Murat Enes Çatı</h1>
+<h1>Uğurkan Yiğit Öztürk</h1>
 
-<p class="subtitle">
-Software Engineering · Web / Security / Unity
+<h3>Software Engineering Student | Cybersecurity & AI Enthusiast</h3>
+
+<p>
+Hello, I'm Yiğit. As a third-year software engineering student, I focus on
+cybersecurity, modern network architectures and artificial intelligence
+applications. My work includes Zero Trust security architectures,
+authentication systems and interactive AI based applications.
 </p>
 
-<div class="socials">
-
-<a href="https://github.com/muratenescati" target="_blank">
-<img src="assets/github.svg">
-</a>
-
-<a href="https://www.linkedin.com/in/murat-enes-%C3%A7at%C4%B1-3a82211b2/" target="_blank">
-<img src="assets/linkedin.svg">
-</a>
-
-<a href="https://www.youtube.com/@muratenescati" target="_blank">
-<img src="assets/youtube.svg">
-</a>
-
-<a href="mailto:muratcati80@gmail.com">
-<img src="assets/gmail.svg">
-</a>
-</div>
-<div class="skills">
-
-<img src="assets/cplusplus.svg">
-
-<img src="assets/python.svg">
-
-<img src="assets/unity.svg">
-
-<img src="assets/javascript.svg">
-
-<img src="assets/html5.svg">
-
-</div>
-</section>
-
-<!-- PROJECTS -->
-
-<section class="section" id="projects">
-
-<h2>Projeler</h2>
-
-<div class="grid">
-
-<div class="card">
-<div class="cover">
-<img src="assets/p1.jpg">
+<div class="hero-badges">
+  <span class="hero-badge">Python</span>
+  <span class="hero-badge">Cybersecurity</span>
+  <span class="hero-badge">AI</span>
+  <span class="hero-badge">Backend</span>
+  <span class="hero-badge">ZTNA</span>
 </div>
 
-<div class="meta">
-<h3>ZTNA Web Site</h3>
-<p>Keycloak + Node.js güvenli giriş sistemi.</p>
-</div>
-</div>
+<div class="hero-buttons">
 
-<div class="card">
-<div class="cover">
-<img src="assets/p2.jpg">
-</div>
+<a href="CV.pdf" target="_blank" class="btn">View CV</a>
 
-<div class="meta">
-<h3>Desktop Cat Avatar</h3>
-<p>Unity + Python masaüstü AI avatar.</p>
-</div>
-</div>
+<a href="https://github.com/Yigit-Ozturk-Ugurkan" target="_blank" class="btn">GitHub</a>
 
-<div class="card">
-<div class="cover">
-<img src="assets/p3.jpg">
-</div>
+<a href="https://www.linkedin.com/in/uğurkan-yiğit-öztürk-a6b8692b9" target="_blank" class="btn">LinkedIn</a>
 
-<div class="meta">
-<h3>Coffee App</h3>
-<p>Kotlin + Firebase mobil uygulama.</p>
-</div>
 </div>
 
 </div>
 
 </section>
-<!-- YARIŞMALAR -->
 
-<section class="section" id="yarismalar">
+<div class="hero-divider"></div>  
 
-<h2>Yarişmalar</h2>
+<section id="about" class="about-section">
 
-<div class="grid">
+<h2>About Me</h2>
 
-<div class="card">
-<div class="cover">
-<img src="assets/Jam1.jpg">
+<p>
+I am a third-year Software Engineering student focusing on secure system architectures,
+modern networking technologies and software development. My research interests include
+Zero Trust Network Access (ZTNA), authentication and authorization systems and
+Intent-Based Networking (IBN).
+</p>
+
+<p>
+I develop backend architectures, API based systems and data-driven software solutions.
+Alongside system design, I also work on artificial intelligence integration and
+interactive systems to build modern and intelligent software applications.
+</p>
+
+</section>
+
+<section id="skills" class="skills-section">
+
+<h2>Technical Skills</h2>
+
+<div class="skills-grid">
+
+<div class="skill-card">
+<h3>Programming</h3>
+<p>Python, Java, C, C++, SQL</p>
 </div>
 
-<div class="meta">
-<h3>Jamination8</h3>
-</div>
-</div>
-
-<div class="card">
-<div class="cover">
-<img src="assets/Jam2.jpg">
+<div class="skill-card">
+<h3>Security</h3>
+<p>ZTNA, Authentication, Authorization, RBAC</p>
 </div>
 
-<div class="meta">
-<h3>AyazJam 2025</h3>
-</div>
+<div class="skill-card">
+<h3>Identity & Access</h3>
+<p>Keycloak, JWT, SSO</p>
 </div>
 
+<div class="skill-card">
+<h3>AI & Data</h3>
+<p>AI Integration, NLP, Data Analysis</p>
+</div>
+
+<div class="skill-card">
+<h3>Tools</h3>
+<p>Git, Docker, REST API</p>
+</div>
+
+<div class="skill-card">
+<h3>Soft Skills</h3>
+<p>Technical Reporting, Problem Solving, Project Management</p>
+</div>
 
 </div>
 
 </section>
 
-</div>
+<section id="projects" class="projects-section">
+  <h2>Projects</h2>
+
+  <div class="projects">
+
+    <div class="project-card card-ztna">
+      <div class="project-content">
+        <span class="project-tag">Security</span>
+        <h3>ZTNA Security Platform</h3>
+        <p>Zero Trust Network Access architecture using Keycloak and JWT.</p>
+        <a href="project.html?project=ztna" class="project-link">View Project →</a>
+      </div>
+    </div>
+
+    <div class="project-card card-finance">
+      <div class="project-content">
+        <span class="project-tag">Finance</span>
+        <h3>Finance Tracker</h3>
+        <p>Personal finance and investment tracking application.</p>
+        <a href="project.html?project=finance" class="project-link">View Project →</a>
+      </div>
+    </div>
+
+    <div class="project-card card-coffee">
+      <div class="project-content">
+        <span class="project-tag">Mobile App</span>
+        <h3>Coffee App</h3>
+        <p>Mobile coffee ordering system built with Firebase backend.</p>
+        <a href="project.html?project=coffee" class="project-link">View Project →</a>
+      </div>
+    </div>
+
+    <div class="project-card card-avatar">
+      <div class="project-content">
+        <span class="project-tag">AI</span>
+        <h3>Interactive AI Avatar</h3>
+        <p>AI powered interactive avatar for story-based games.</p>
+        <a href="project.html?project=avatar" class="project-link">View Project →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+
+<h2>Contact</h2>
+
+<p>Email: ugurkan.yigit.27@gmail.com</p>
+
+</section>
+
+<footer>
+
+<p>© 2026 Uğurkan Yiğit Öztürk</p>
+
+</footer>
 
 </body>
 </html>
