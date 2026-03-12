@@ -13,10 +13,15 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: var(--bg-color);
-  color: var(--text-main);
   margin: 0;
-  overflow-x: hidden;
+  background-color: #ededf0 !important; /* Çok hafif, kirli beyaz/gri arası bir ton */
+  color: #18181b;
+  line-height: 1.6;
+}
+
+/* Siyah bölümlerin (Projeler, Contact) rengini de biraz yumuşatalım */
+.projects-full-dark, .contact-full-dark {
+  background-color: #121214 !important; /* Tam siyah değil, çok koyu füme */
 }
 
 .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
@@ -44,7 +49,6 @@ body {
   background: white; padding: 6px 16px; border-radius: 99px; font-weight: 600; 
   border: var(--border); font-size: 0.85rem;
 }
-.color-dance { border-color: #4F46E5 !important; color: #4F46E5 !important; }
 
 .hero h1 { font-size: 4rem; font-weight: 900; margin: 0; letter-spacing: -1.5px; }
 .profile-photo { width: 340px; border-radius: 32px; box-shadow: var(--shadow-md); border: 4px solid white; }
@@ -80,10 +84,39 @@ body {
 }
 .projects-full-dark h2 { color: white; margin-bottom: 40px; }
 
-.projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; }
+.projects { 
+  display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+   }
 .project-card { 
-  background: white; padding: 40px; border-radius: var(--radius-lg); min-height: 300px; 
-  display: flex; align-items: flex-end; border: var(--border); transition: 0.4s; color: var(--text-main); text-decoration: none; 
+  background: white; 
+  padding: 40px;
+  border-radius: var(--radius-lg); 
+  
+  /* DEĞİŞİKLİK 1: Yönü dikey yapıyoruz */
+  display: flex;
+  flex-direction: column; 
+  
+  /* Yazıları alta itmek için align-items: flex-end yerine 
+     içerideki boşlukları kullanmak daha sağlıklıdır */
+  justify-content: space-between; 
+
+  min-height: 400px; /* Resim geleceği için biraz artırabilirsin */
+  border: var(--border); 
+  transition: 0.4s; 
+  color: var(--text-main);
+  text-decoration: none; 
+  overflow: hidden; /* Resim köşelerden taşmasın diye */
+}
+
+/* YENİ KURAL: Resmin devleşmesini engelleyen kısım */
+.project-card img {
+  width: 100%;       /* Kartın genişliği kadar ol */
+  height: 250px;     /* Sabit bir yükseklik ver (opsiyonel) */
+  object-fit: cover; /* Resmi yamultmadan kutuya sığdır (Altın kural!) */
+  border-radius: var(--radius-md); /* Resmin köşelerini de yumuşatalım */
+  margin-bottom: 10px; /* Yazıyla arasına mesafe koy */
 }
 .project-card:hover { transform: translateY(-12px); box-shadow: 0 25px 50px rgba(0,0,0,0.3); }
 
@@ -103,6 +136,13 @@ body {
 .btn-primary-white { background: white; color: #18181B; }
 .btn-primary-white:hover { background: #E5E7EB; transform: scale(1.05); }
 .btn-outline { border: var(--border); color: #18181B; }
+
+/* Genel Buton Hover Durumu */
+.btn:hover {
+    /* Yatay, Dikey, Yayılma, Boyut, Renk (Siyah %15 opaklık) */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); 
+    transform: translateY(-2px); /* Çok hafif yukarı kalkma efekti (isteğe bağlı) */
+}
 
 /* PROJECT DETAIL EKSİKLERİ */
 .detail-page { padding: 60px 0; }
@@ -126,4 +166,118 @@ footer { text-align: center; padding: 60px 0; background: var(--bg-color); color
   .profile-photo { width: 280px; }
   .skills-grid-large { grid-template-columns: 1fr; }
   .contact-merged-content h2 { font-size: 2.5rem; }
+}
+
+/* Kartın içindeki fotoğrafı küçük ve düzenli tutan kod */
+.card-thumb {
+  width: 100%;
+  height: 140px; /* İstediğin "küçük" boyut için yüksekliği buradan ayarlayabilirsin */
+  object-fit: cover; /* Fotoğrafı kutuya sığdırır, yamultmaz */
+  border-radius: 12px; /* Köşeleri yuvarlar */
+  margin-bottom: 12px; /* Yazılarla arasını açar */
+  border: 1px solid rgba(0,0,0,0.05); /* Çok hafif bir çerçeve */
+}
+
+/* Kartın içeriğinin yukarı doğru hizalanmasını sağlamak için (eğer gerekirse) */
+.project-card {
+  align-items: flex-start !important; /* İçeriği en üste çeker */
+  padding: 20px !important;
+}
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  padding: 50px 0;
+  background: transparent;
+  border-top: 1px solid rgba(0,0,0,0.05); /* Üstte çok ince bir çizgi */
+  border-bottom: 1px solid rgba(0,0,0,0.05); /* Altta çok ince bir çizgi */
+}
+
+.marquee-content {
+  display: flex;
+  animation: scroll 35s linear infinite; /* Daha yavaş ve elit bir akış */
+}
+
+.logo-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-right: 80px; /* Logolar arası mesafe */
+  color: var(--text-main);
+  opacity: 0.3; /* Varsayılan olarak sönük durur */
+  transition: 0.3s;
+  filter: grayscale(100%); /* Renkleri tamamen gri yapar */
+}
+
+/* Hover yapınca parlaması (Etkileşim katar) */
+.logo-item:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+.logo-item i {
+  font-size: 2.5rem; /* İkon boyutu */
+}
+
+.logo-item span {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+/* Section Genel Boşluğu */
+.about-section {
+  padding: 100px 0;
+}
+
+.about-card {
+  background: white;
+  padding: 60px 50px 50px 60px; /* İçerik için nefes alma alanı */
+  border-radius: var(--radius-lg);
+  border: var(--border);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.04);
+  max-width: 900px;
+  margin: 40px auto 0; /* Üstte başlık için yer bıraktık */
+  position: relative;
+}
+
+/* Sol Kenardaki Vurgu Çizgisi */
+.about-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 10px;
+  background: var(--primary); /* Siyah vurgu */
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+}
+
+/* İŞTE KRİTİK HİZALAMA: Başlık */
+.about-title {
+  position: absolute;
+  top: -50px; /* Kutunun üstüne çıkarır */
+  left: 0;    /* Kutunun sol kenarıyla (çizgiyle) eşitler */
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: var(--text-main);
+}
+
+/* Metinlerin Düzeni */
+.about-clean-content p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 25px;
+}
+
+.about-clean-content p:last-child {
+  margin-bottom: 0;
 }

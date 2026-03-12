@@ -34,7 +34,6 @@
         <p id="desc" class="detail-desc"></p>
         <div class="detail-buttons">
           <a id="demo" class="btn btn-primary lang-text" data-tr="Canlı Demo" data-en="Live Demo" target="_blank">Live Demo</a>
-          <a id="drive" class="btn btn-outline lang-text" data-tr="Drive Linki" data-en="Drive Link" target="_blank">Drive Link</a>
         </div>
         <hr />
         <h2 class="lang-text" data-tr="Öne Çıkanlar" data-en="Highlights">Highlights</h2>
@@ -54,32 +53,32 @@
       ztna: {
         en: { title: "ZTNA Security Platform", desc: "Network access control system developed based on Zero Trust principles.", highlights: ["Keycloak Identity Management", "JWT-based sessions", "RBAC Architecture"] },
         tr: { title: "ZTNA Güvenlik Platformu", desc: "Sıfır Güven prensiplerine dayalı ağ erişim kontrol sistemi.", highlights: ["Keycloak Kimlik Yönetimi", "JWT tabanlı oturumlar", "Rol Tabanlı Erişim"] },
-        image: "ztna.jpg", demo: "https://wbt-project.com/", drive: "https://drive.google.com/drive/u/0/folders/1oybOvUmxSDfLu-fk1miwkdrYUtnVj_67", tech: ["Keycloak", "JWT", "Zero Trust", "IAM"]
+        image: "ztna2.png", demo: "https://wbt-project.com/", tech: ["Keycloak", "JWT", "Zero Trust", "IAM"]
       },
       finance: {
         en: { title: "Finance Tracker", desc: "Personal finance and investment tracking application.", highlights: ["Income/Expense tracking", "Financial analysis", "UI/UX focus"] },
         tr: { title: "Finans Takipçisi", desc: "Kişisel finans ve yatırım takip uygulaması.", highlights: ["Gelir/Gider takibi", "Finansal analiz", "Kullanıcı odaklı tasarım"] },
-        image: "finance.jpg", demo: "#", drive: "https://drive.google.com/drive/u/0/folders/1W6BsINzBa0S53d98Snp6pdedZ7eNA4nT", tech: ["C#", "SQL", "Mock Data", "Data Analysis"]
+        image: "finance.png", demo: "#", tech: ["C#", "SQL", "Mock Data", "Data Analysis"]
       },
       coffee: {
         en: { title: "Coffee App", desc: "Mobile coffee ordering application built with Firebase.", highlights: ["Firebase Authentication", "Realtime Database", "Kotlin/Android"] },
         tr: { title: "Kahve Uygulaması", desc: "Firebase ile geliştirilen mobil kahve sipariş sistemi.", highlights: ["Firebase Kimlik Doğrulama", "Gerçek Zamanlı Veritabanı", "Kotlin/Android"] },
-        image: "coffee.jpg", demo: "#", drive: "https://drive.google.com/drive/u/0/folders/1x1rumdt4soJdZDIjXbeZjCs4x2iwKG5K", tech: ["Android", "Firebase", "Kotlin", "Java"]
+        image: "coffee2.png", demo: "https://play.google.com/store/apps/details?id=com.burakalmaz.coffeeapp", tech: ["Android", "Firebase", "Kotlin", "Java"]
       },
       avatar: {
         en: { title: "Interactive AI Avatar", desc: "AI-powered interactive desktop character for games.", highlights: ["NLP based response", "Unity Integration", "Desktop Avatar System"] },
         tr: { title: "İnteraktif AI Avatar", desc: "Oyunlar için yapay zeka destekli masaüstü karakteri.", highlights: ["NLP tabanlı yanıt sistemi", "Unity Entegrasyonu", "Masaüstü Avatar Sistemi"] },
-        image: "avatar.jpg", demo: "#", drive: "https://drive.google.com/drive/u/0/folders/1TGqWx-TUM85WMUxYJkSZf0oygUJAeu55", tech: ["Python", "Unity", "AI", "NLP"]
+        image: "Avatar2.png", demo: "https://xemelliona.itch.io/desktopcat", tech: ["Python", "Unity", "AI", "NLP"]
       },
       jamination8: {
         en: { title: "Jamination8", desc: "A gritty, hand-drawn rogue-like built by four of us.", highlights: ["Hand-drawn art", "Tight mechanics", "Rogue-like loop"] },
         tr: { title: "Jamination8", desc: "4 kişi tarafından geliştirilen el çizimi rogue-like oyunu.", highlights: ["El çizimi sanat", "Sıkı mekanikler", "Rogue-like döngüsü"] },
-        image: "avatar.jpg", demo: "#", drive: "#", tech: ["Unity", "C#", "2D", "Retro"]
+        image: "Jam1.jpg", demo: "https://itch.io/jam/jamination-8/rate/3971251", tech: ["Unity", "C#", "2D", "Retro"]
       },
       ayazjam2: {
         en: { title: "Ayazjam 2", desc: "Hand-drawn world with custom physics engine.", highlights: ["Custom physics", "Retro style", "5-person team"] },
         tr: { title: "Ayazjam 2", desc: "Özel fizik motoruna sahip el çizimi dünya.", highlights: ["Özel fizik motoru", "Retro tarz", "5 kişilik ekip"] },
-        image: "avatar.jpg", demo: "#", drive: "#", tech: ["Unity", "C#", "Physics", "Retro"]
+        image: "Jam2.jpg", demo: "https://itch.io/jam/ayazjam25/rate/4099765", tech: ["Unity", "C#", "Physics", "Retro"]
       }
     };
 
@@ -90,19 +89,41 @@
       const item = data[project];
       if(!item) return;
       const langData = item[currentLang];
+      
       document.getElementById("title").innerText = langData.title;
       document.getElementById("desc").innerText = langData.desc;
       
       const imgEl = document.getElementById("projectImage");
-      if(item.image) { imgEl.src = item.image; imgEl.style.display = "block"; }
+      if(item.image) { 
+        imgEl.src = item.image; 
+        imgEl.style.display = "block"; 
+      }
+
+      // --- CANLI DEMO BUTONUNU AKTİF EDEN KISIM ---
+      const demoBtn = document.getElementById("demo");
+      if(item.demo && item.demo !== "#") {
+          demoBtn.href = item.demo;
+          demoBtn.style.display = "inline-block";
+      } else {
+          demoBtn.style.display = "none"; // Demo linki yoksa butonu gizle
+      }
 
       const highlightsEl = document.getElementById("highlights");
       highlightsEl.innerHTML = "";
-      langData.highlights.forEach(h => { const li = document.createElement("li"); li.innerText = h; highlightsEl.appendChild(li); });
+      langData.highlights.forEach(h => { 
+          const li = document.createElement("li"); 
+          li.innerText = h; 
+          highlightsEl.appendChild(li); 
+      });
 
       const techEl = document.getElementById("techTags");
       techEl.innerHTML = "";
-      item.tech.forEach(t => { const s = document.createElement("span"); s.className = "tag-fixed"; s.innerText = t; techEl.appendChild(s); });
+      item.tech.forEach(t => { 
+          const s = document.createElement("span"); 
+          s.className = "tag-fixed"; 
+          s.innerText = t; 
+          techEl.appendChild(s); 
+      });
 
       langToggleBtn.textContent = currentLang === 'en' ? 'TR' : 'EN';
       document.querySelectorAll('.lang-text').forEach(el => {
